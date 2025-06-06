@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0; /* Light grey background for contrast */
+            background-color: #f0f0f0; 
         }
 
         .container {
@@ -28,33 +28,31 @@
         p {
             line-height: 1.6;
             margin-bottom: 30px;
-            font-size: 0.9em; /* Slightly smaller font as in the image */
+            font-size: 0.9em; /
         }
 
-        /* Image section styling - no marquee */
         .image-gallery {
-            display: flex; /* Use flexbox to arrange images horizontally */
-            justify-content: center; /* Center the images */
-            gap: 15px; /* Space between images */
-            flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
-            border-top: 1px solid #ccc; /* Thin grey line above images */
-            border-bottom: 1px solid #ccc; /* Thin grey line below images */
-            padding: 10px 0; /* Add some padding vertically */
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            border-top: 1px solid #ccc; 
+            border-bottom: 1px solid #ccc; 
+            padding: 10px 0; 
         }
 
         .image-gallery img {
-            height: 200px; /* Adjust height as needed */
-            width: auto; /* Maintain aspect ratio */
-            flex-shrink: 0; /* Prevent images from shrinking if space is tight */
+            height: 200px; 
+            width: auto; 
+            flex-shrink: 0; 
         }
 
-        /* Basic responsiveness for images */
         @media (max-width: 768px) {
             .image-gallery {
-                justify-content: space-around; /* Distribute space more evenly */
+                justify-content: space-around; 
             }
             .image-gallery img {
-                max-width: 45%; /* Make images take up roughly half the width on smaller screens */
+                max-width: 45%; 
                 height: auto;
             }
         }
