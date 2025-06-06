@@ -9,33 +9,33 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Light background */
-            display: flex; /* Use flexbox to align content */
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            background-color: #f8f8f8; 
+            display: flex; 
+            min-height: 100vh; 
         }
 
         .left-panel {
-            flex: 0 0 350px; /* Fixed width for the image panel */
+            flex: 0 0 350px; 
             background-color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Ensure image doesn't overflow */
+            overflow: hidden; 
         }
 
         .left-panel img {
             max-width: 100%;
             height: auto;
-            display: block; /* Remove extra space below image */
+            display: block; 
         }
 
         .right-panel {
-            flex-grow: 1; /* Takes remaining space */
+            flex-grow: 1; 
             background-color: #fff;
             padding: 40px;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
-            margin-left: 20px; /* Space between left panel and form */
-            max-width: 600px; /* Limit form width */
+            margin-left: 20px; 
+            max-width: 600px; 
         }
 
         .form-title {
@@ -44,11 +44,11 @@
             color: #444;
             margin-bottom: 30px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #c00; /* Red underline as in image */
-            display: inline-block; /* To make border-bottom fit text */
-            width: auto; /* Allow width to adjust to text */
-            margin-left: auto; /* Center the title block */
-            margin-right: auto; /* Center the title block */
+            border-bottom: 1px solid #c00;
+            display: inline-block; 
+            width: auto; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
 
         .form-row {
@@ -58,7 +58,7 @@
         }
 
         .form-row label {
-            flex: 0 0 120px; /* Fixed width for labels */
+            flex: 0 0 120px; 
             text-align: right;
             margin-right: 20px;
             font-weight: bold;
@@ -71,16 +71,16 @@
         .form-row input[type="time"],
         .form-row textarea,
         .form-row select {
-            flex-grow: 1; /* Take remaining space */
+            flex-grow: 1; 
             padding: 8px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1em;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            box-sizing: border-box; 
         }
 
         .form-row input[type="text"].half-width {
-            flex: 1; /* Allows two inputs in one row */
+            flex: 1; 
         }
 
         .form-row input[type="radio"] {
@@ -88,10 +88,10 @@
         }
 
         .form-row .radio-group label {
-            text-align: left; /* Override label alignment for radio group */
-            font-weight: normal; /* Normal weight for radio labels */
-            margin-right: 15px; /* Space between radio options */
-            flex: unset; /* Remove flex sizing for radio labels */
+            text-align: left; 
+            font-weight: normal; 
+            margin-right: 15px; 
+            flex: unset; 
         }
         .form-row .radio-group {
              display: flex;
@@ -99,17 +99,17 @@
         }
 
         .form-row textarea {
-            min-height: 80px; /* Increased height for query box */
-            resize: vertical; /* Allow vertical resizing */
+            min-height: 80px; 
+            resize: vertical; 
         }
 
         .appointment-type-options {
             margin-top: 20px;
-            padding-left: 140px; /* Align with input fields */
+            padding-left: 140px; 
         }
 
         .appointment-type-options label {
-            display: block; /* Each option on new line */
+            display: block; 
             margin-bottom: 8px;
             font-weight: normal;
             font-size: 0.9em;
@@ -120,13 +120,13 @@
         }
 
         .submit-button-container {
-            text-align: right; /* Align button to the right */
+            text-align: right; 
             margin-top: 30px;
-            padding-right: 20px; /* Adjust as needed to align with form inputs */
+            padding-right: 20px; 
         }
 
         .submit-button {
-            background-color: #007bff; /* Blue button */
+            background-color: #007bff; 
             color: white;
             padding: 10px 20px;
             border: none;
@@ -139,21 +139,20 @@
             background-color: #0056b3;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 800px) {
             body {
-                flex-direction: column; /* Stack image and form vertically */
+                flex-direction: column; 
             }
 
             .left-panel {
-                flex: none; /* Remove fixed width */
-                width: 100%; /* Take full width */
-                height: 250px; /* Set a fixed height for the image on smaller screens */
+                flex: none; 
+                width: 100%; 
+                height: 250px; 
                 padding-bottom: 20px;
             }
 
             .left-panel img {
-                max-height: 100%; /* Ensure image fits within fixed height */
+                max-height: 100%; 
                 width: auto;
             }
 
@@ -161,27 +160,27 @@
                 margin-left: 0;
                 margin-top: 20px;
                 padding: 20px;
-                max-width: unset; /* Remove max-width for full flexibility */
+                max-width: unset; 
             }
 
             .form-row {
-                flex-direction: column; /* Stack label and input vertically */
+                flex-direction: column; 
                 align-items: flex-start;
             }
 
             .form-row label {
-                width: 100%; /* Full width for labels */
+                width: 100%; 
                 text-align: left;
                 margin-bottom: 5px;
                 margin-right: 0;
             }
 
             .form-row input[type="text"].half-width {
-                width: 100%; /* Full width for half-width inputs when stacked */
-                margin-bottom: 10px; /* Space between stacked half-width inputs */
+                width: 100%; 
+                margin-bottom: 10px; 
             }
             .form-row .radio-group {
-                flex-direction: column; /* Stack radio buttons vertically */
+                flex-direction: column; 
                 align-items: flex-start;
             }
             .form-row .radio-group label {
@@ -189,7 +188,7 @@
             }
 
             .appointment-type-options {
-                padding-left: 0; /* Remove left padding */
+                padding-left: 0; 
             }
              .submit-button-container {
                 text-align: center;
