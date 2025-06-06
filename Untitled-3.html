@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Light background */
+            display: flex; /* Use flexbox to align content */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        .left-panel {
+            flex: 0 0 350px; /* Fixed width for the image panel */
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Ensure image doesn't overflow */
+        }
+
+        .left-panel img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Remove extra space below image */
+        }
+
+        .right-panel {
+            flex-grow: 1; /* Takes remaining space */
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            margin-left: 20px; /* Space between left panel and form */
+            max-width: 600px; /* Limit form width */
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.8em;
+            color: #444;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #c00; /* Red underline as in image */
+            display: inline-block; /* To make border-bottom fit text */
+            width: auto; /* Allow width to adjust to text */
+            margin-left: auto; /* Center the title block */
+            margin-right: auto; /* Center the title block */
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            flex: 0 0 120px; /* Fixed width for labels */
+            text-align: right;
+            margin-right: 20px;
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="date"],
+        .form-row input[type="time"],
+        .form-row textarea,
+        .form-row select {
+            flex-grow: 1; /* Take remaining space */
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        .form-row input[type="text"].half-width {
+            flex: 1; /* Allows two inputs in one row */
+        }
+
+        .form-row input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-row .radio-group label {
+            text-align: left; /* Override label alignment for radio group */
+            font-weight: normal; /* Normal weight for radio labels */
+            margin-right: 15px; /* Space between radio options */
+            flex: unset; /* Remove flex sizing for radio labels */
+        }
+        .form-row .radio-group {
+             display: flex;
+             align-items: center;
+        }
+
+        .form-row textarea {
+            min-height: 80px; /* Increased height for query box */
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        .appointment-type-options {
+            margin-top: 20px;
+            padding-left: 140px; /* Align with input fields */
+        }
+
+        .appointment-type-options label {
+            display: block; /* Each option on new line */
+            margin-bottom: 8px;
+            font-weight: normal;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .appointment-type-options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .submit-button-container {
+            text-align: right; /* Align button to the right */
+            margin-top: 30px;
+            padding-right: 20px; /* Adjust as needed to align with form inputs */
+        }
+
+        .submit-button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 800px) {
+            body {
+                flex-direction: column; /* Stack image and form vertically */
+            }
+
+            .left-panel {
+                flex: none; /* Remove fixed width */
+                width: 100%; /* Take full width */
+                height: 250px; /* Set a fixed height for the image on smaller screens */
+                padding-bottom: 20px;
+            }
+
+            .left-panel img {
+                max-height: 100%; /* Ensure image fits within fixed height */
+                width: auto;
+            }
+
+            .right-panel {
+                margin-left: 0;
+                margin-top: 20px;
+                padding: 20px;
+                max-width: unset; /* Remove max-width for full flexibility */
+            }
+
+            .form-row {
+                flex-direction: column; /* Stack label and input vertically */
+                align-items: flex-start;
+            }
+
+            .form-row label {
+                width: 100%; /* Full width for labels */
+                text-align: left;
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+
+            .form-row input[type="text"].half-width {
+                width: 100%; /* Full width for half-width inputs when stacked */
+                margin-bottom: 10px; /* Space between stacked half-width inputs */
+            }
+            .form-row .radio-group {
+                flex-direction: column; /* Stack radio buttons vertically */
+                align-items: flex-start;
+            }
+            .form-row .radio-group label {
+                margin-bottom: 5px;
+            }
+
+            .appointment-type-options {
+                padding-left: 0; /* Remove left padding */
+            }
+             .submit-button-container {
+                text-align: center;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <img src="https://via.placeholder.com/350x500?text=Smiling+Doctor" alt="Smiling doctor holding clipboard">
+    </div>
+
+    <div class="right-panel">
+        <div class="form-title">Doctor Appointment Form</div>
+
+        <form>
+            <div class="form-row">
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" value="2025-06-06">
+            </div>
+
+            <div class="form-row">
+                <label for="appointmentTime">Appointment Time</label>
+                <input type="time" id="appointmentTime" name="appointmentTime" value="10:00">
+            </div>
+
+            <div class="form-row">
+                <label for="firstName">Name</label>
+                <input type="text" id="firstName" name="firstName" class="half-width" placeholder="First">
+                <input type="text" id="lastName" name="lastName" class="half-width" placeholder="Last">
+            </div>
+
+            <div class="form-row">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+            </div>
+
+            <div class="form-row">
+                <label for="address">Address</label>
+                <input type="text" id="city" name="city" class="half-width" placeholder="City">
+                <input type="text" id="state" name="state" class="half-width" placeholder="State">
+            </div>
+
+            <div class="form-row">
+                <label for="yourQuery">Your Query</label>
+                <textarea id="yourQuery" name="yourQuery"></textarea>
+            </div>
+
+            <div class="form-row">
+                <label>Appointment Type</label>
+                <div>Select which appointment type you require</div>
+            </div>
+
+            <div class="appointment-type-options">
+                <label>
+                    <input type="radio" name="appointmentType" value="general"> General checking
+                </label>
+                <label>
+                    <input type="radio" name="appointmentType" value="heart"> Heart checkup
+                </label>
+                <label>
+                    <input type="radio" name="appointmentType" value="eye"> Eye check up
+                </label>
+                <label>
+                    <input type="radio" name="appointmentType" value="hearing"> Hearing Test
+                </label>
+            </div>
+
+            <div class="submit-button-container">
+                <button type="submit" class="submit-button">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
